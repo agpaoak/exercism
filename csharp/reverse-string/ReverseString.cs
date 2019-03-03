@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 public static class ReverseString
 {
@@ -11,7 +12,17 @@ public static class ReverseString
         }
         else
         {
-            return input;
+            StringBuilder sb = new StringBuilder();
+            Char[] temp = input.ToCharArray();
+
+            Array.Reverse(temp);
+
+           foreach(var c in temp)
+            {
+                sb.Append(c);
+            }
+
+            return sb.ToString();
         }
     }
 }
