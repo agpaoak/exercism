@@ -17,7 +17,7 @@ public static class Pangram
         {
             foreach(var c in alpha)
             {
-                if (!(input.Contains(c)))
+                if (!(input.ToLower().Contains(c)))
                 {
                     return false;
                 }
