@@ -24,8 +24,6 @@ public static class Pangram
             }
             return true;
         }
-
-  
     }
     
 }
