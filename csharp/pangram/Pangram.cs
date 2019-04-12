@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
 
 public static class Pangram
 {
+    private static readonly char[] alpha = "abcdefghijklmnopqrstuvwxyz".ToCharArray(); 
 
-    private static readonly char[] alpha =  "abcdefghijklmnopqrstuvwxyz".ToCharArray();
     public static bool IsPangram(string input)
     {
         if (String.IsNullOrEmpty(input) || input.Length < 26)
@@ -15,7 +12,7 @@ public static class Pangram
         }
         else
         {
-            foreach(var c in alpha)
+            foreach (var c in alpha)
             {
                 if (!(input.ToLower().Contains(c)))
                 {
@@ -24,8 +21,5 @@ public static class Pangram
             }
             return true;
         }
-
-  
     }
-    
 }

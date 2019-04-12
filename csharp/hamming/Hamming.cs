@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 public static class Hamming
 {
@@ -21,13 +22,15 @@ public static class Hamming
 
             for(var i=0; i < firstStrandArr.Length -1 ; i++)
             {
-                if(firstStrandArr[i].Equals(secondStrandArr[i]))
+                if(firstStrandArr[i] == secondStrandArr[i])
                 {
-                    diffCount += 1;
+                    diffCount++;
                 }
             }
 
-            return firstStrandArr.Length - diffCount;
+            var zipped = firstStrandArr.Zip(secondStrandArr, (first, second) => first + second);
+
+            return zipped.Count();
         }
     }
 }
