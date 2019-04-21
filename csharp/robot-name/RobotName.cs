@@ -1,4 +1,6 @@
 using System;
+using System.Text;
+using System.Linq;
 
 public class Robot
 {
@@ -6,12 +8,12 @@ public class Robot
     {
         get
         {
-            throw new NotImplementedException("You need to implement this function.");
+
         }
     }
 
     public void Reset()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        //sthrow new NotImplementedException("You need to implement this function.");
     }
 }
