@@ -16,9 +16,9 @@ public class Robot
     {
         get
         {
-            if (_name == null)
+            if (string.IsNullOrEmpty(_name))
             {
-                _name = this.CreateName();
+                _name = CreateName();
             }
             return _name;
         }

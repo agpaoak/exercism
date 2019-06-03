@@ -32,7 +32,7 @@ public class RobotNameTest
         Assert.NotEqual(originalName, robot.Name);
     }
 
-    [Fact(Skip = "Remove to run test")]
+    [Fact]
     public void After_reset_the_name_is_valid()
     {
         robot.Reset();
