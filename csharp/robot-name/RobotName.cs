@@ -1,19 +1,19 @@
 using System;
-using System.Text;
-using System.Linq;
 
 public class Robot
 {
+
+    private string _name;
     public string Name
     {
         get
         {
-
+            return _name = "AA001";
         }
     }
 
     public void Reset()
     {
-        //sthrow new NotImplementedException("You need to implement this function.");
+        _name = string.Empty;
     }
 }
