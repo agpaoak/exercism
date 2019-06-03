@@ -16,6 +16,10 @@ public class Robot
     {
         get
         {
+            if (_name == null)
+            {
+                _name = this.CreateName();
+            }
             return _name;
         }
     }
