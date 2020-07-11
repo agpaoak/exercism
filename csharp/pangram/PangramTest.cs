@@ -22,14 +22,20 @@ public class PangramTest
         Assert.True(Pangram.IsPangram("the quick brown fox jumps over the lazy dog"));
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2aaca39938f022a0e11ad838d87f208f196a5610
     [Fact]
     public void Missing_character_x()
     {
         Assert.False(Pangram.IsPangram("a quick movement of the enemy will jeopardize five gunboats"));
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2aaca39938f022a0e11ad838d87f208f196a5610
     [Fact]
     public void Another_missing_character_e_g_h()
     {
