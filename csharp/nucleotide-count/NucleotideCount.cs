@@ -1,30 +1,28 @@
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using System.Linq;
 
 public static class NucleotideCount
 {
     public static IDictionary<char, int> Count(string sequence)
     {
-        IDictionary<char, int> result = new Dictionary<char, int>
-        {
-            ['A'] = 0,
-            ['C'] = 0,
-            ['G'] = 0,
-            ['T'] = 0
-        };
+        //
+        Regex unacceptedChars = new Regex("[^ACGT]");
 
-        foreach(var dna in sequence.ToCharArray())
+        if (unacceptedChars.IsMatch(sequence))
         {
-            if (result.ContainsKey(dna))
-            {
-                result[dna] += 1;
-            }
-            else
-            {
-                throw new ArgumentException();
-            }
+            throw new ArgumentException();
         }
-
-        return result;
+        else
+        {
+            return new Dictionary<char, int>
+            {
+                ['A'] = sequence.Count(a => a == 'A'),
+                ['C'] = sequence.Count(c => c == 'C'),
+                ['G'] = sequence.Count(g => g == 'G'),
+                ['T'] = sequence.Count(t => t == 'T')
+            };
+        }
     }
 }
