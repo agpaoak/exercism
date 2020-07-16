@@ -1,23 +1,15 @@
 using System;
-using System.Collections.Generic;
+using System.String;
 
 public class Robot
 {
+     
+    public Robot(string name) => Name = name;
 
-    private string _name;
-    private List <string> _names = new List <string>();
-
-    public string Name
+    public string Name 
     {
-        get
-        {
-           return _name;
-        }
-        set
-        {
-            _name = value;
-        }
-
+        get => locationname;
+        set => locationname = value;
     }
 
     public void Reset()
