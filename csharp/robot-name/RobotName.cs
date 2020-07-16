@@ -1,19 +1,37 @@
 using System;
-using System.String;
 
 public class Robot
 {
-     
-    public Robot(string name) => Name = name;
-
-    public string Name 
+    private string _name;
+    public Robot()
     {
-        get => locationname;
-        set => locationname = value;
+        Name =  GetRandChar() + 
+                GetRandChar() + 
+                GetRandInt();
+    }
+    public string Name
+    {
+        get => _name;
+        set => _name = value;
     }
 
     public void Reset()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        Name =  GetRandChar() + 
+                GetRandChar() + 
+                GetRandInt();
     }
+
+    private string GetRandChar()
+    {
+        var rand = new Random();
+        return ((char)('a' + rand.Next(0,26))).ToString().ToUpper();
+    }
+
+    private string GetRandInt()
+    {
+        var rand = new Random();
+        return rand.Next(999).ToString().PadLeft(3,'0');
+    }
+
 }
