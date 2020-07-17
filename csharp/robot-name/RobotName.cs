@@ -1,25 +1,27 @@
 using System;
+using System.Collections.Generic;
 
 public class Robot
 {
-    private string _name;
+    private static List<string> _names = new List<string>();
     public Robot()
     {
-        Name =  GetRandChar() + 
-                GetRandChar() + 
-                GetRandInt();
+        Reset();
     }
     public string Name
     {
-        get => _name;
-        set => _name = value;
+        get;
+        set;
     }
 
     public void Reset()
     {
-        Name =  GetRandChar() + 
-                GetRandChar() + 
-                GetRandInt();
+        do
+        {
+            Name = GetName();
+        } while(_names.Contains(Name));
+
+        _names.Add(Name);
     }
 
     private string GetRandChar()
@@ -31,7 +33,15 @@ public class Robot
     private string GetRandInt()
     {
         var rand = new Random();
-        return rand.Next(999).ToString().PadLeft(3,'0');
+        const int MAX_NUM = 999;
+        return rand.Next(MAX_NUM).ToString().PadLeft(3,'0');
+    }
+
+    private string GetName()
+    {
+        return GetRandChar() + 
+                GetRandChar() + 
+                GetRandInt();
     }
 
 }
