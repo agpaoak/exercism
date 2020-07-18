@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 public class Robot
 {
-    private static List<string> _names = new List<string>();
+    private static List<string> names = new List<string>();
+    Random rand = new Random();
     public Robot()
     {
         Reset();
@@ -19,20 +20,20 @@ public class Robot
         do
         {
             Name = GetName();
-        } while(_names.Contains(Name));
+        } while(names.Contains(Name));
 
-        _names.Add(Name);
+        names.Add(Name);
     }
 
     private string GetRandChar()
     {
-        var rand = new Random();
-        return ((char)('a' + rand.Next(0,26))).ToString().ToUpper();
+        string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        return letters[rand.Next(letters.Length)].ToString();
     }
 
     private string GetRandInt()
     {
-        var rand = new Random();
+
         const int MAX_NUM = 999;
         return rand.Next(MAX_NUM).ToString().PadLeft(3,'0');
     }
