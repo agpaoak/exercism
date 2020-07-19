@@ -1,17 +1,21 @@
 def convert(number):
 
-    rValue = ''
+    r_value = ''
 
-    if (number%3 != 0 and
-        number%5 != 0 and
-        number%7 != 0):
-        return str(number)
+    if (number % 3 != 0 and
+        number % 5 != 0 and
+        number % 7 != 0):
+        r_value =  str(number)
+    else:
+        r_value = pling(number) + plang(number) + plong(number)
 
-    if (number%3 == 0):
-        rValue = rValue + 'Pling'
-    if(number%5 == 0):
-        rValue = rValue + 'Plang'
-    if(number%7 == 0):
-        rValue = rValue + 'Plong'
+    return r_value
 
-    return rValue
+def pling(number):
+    return 'Pling' if (number % 3 == 0) else  ''
+
+def plang(number):
+    return 'Plang' if (number % 5 == 0) else  ''
+
+def plong(number):
+    return 'Plong' if (number % 7 == 0) else  ''
