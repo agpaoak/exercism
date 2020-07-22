@@ -1,15 +1,8 @@
 def convert(number):
 
-    r_value = ''
+    r_value = pling(number) + plang(number) + plong(number)
 
-    if (number % 3 != 0 and
-        number % 5 != 0 and
-        number % 7 != 0):
-        r_value =  str(number)
-    else:
-        r_value = pling(number) + plang(number) + plong(number)
-
-    return r_value
+    return r_value if r_value else str(number)
 
 def pling(number):
     return 'Pling' if (number % 3 == 0) else  ''
