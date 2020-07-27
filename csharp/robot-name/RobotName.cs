@@ -7,21 +7,17 @@ public class Robot
     Random rand = new Random();
     public Robot()
     {
-        Reset();
+        names.Add(Name = GetName());
     }
     public string Name
     {
         get;
-        set;
+        private set;
     }
 
     public void Reset()
     {
-        do
-        {
-            Name = GetName();
-        } while(names.Contains(Name));
-
+        Name = GetName();
         names.Add(Name);
     }
 
@@ -40,9 +36,17 @@ public class Robot
 
     private string GetName()
     {
-        return GetRandChar() + 
-                GetRandChar() + 
-                GetRandInt();
+        string tempName = String.Empty;
+
+        do
+        {
+            tempName =  GetRandChar() + 
+                        GetRandChar() + 
+                        GetRandInt();
+
+        } while(names.Contains(tempName));
+
+        return tempName;
     }
 
 }
