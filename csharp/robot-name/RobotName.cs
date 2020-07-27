@@ -37,12 +37,12 @@ public class Robot
     private string GetName()
     {
         string tempName = String.Empty;
-        
+
         do
         {
-            tempName = GetRandChar() + 
-                            GetRandChar() + 
-                            GetRandInt();
+            tempName =  GetRandChar() + 
+                        GetRandChar() + 
+                        GetRandInt();
 
         } while(names.Contains(tempName));
 
