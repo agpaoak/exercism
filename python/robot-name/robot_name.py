@@ -1,4 +1,5 @@
-import random
+import secrets
+import string
 
 class Robot:
 
@@ -13,14 +14,15 @@ class Robot:
         Robot.names.append(self.name)
     
     def __get_rand_int(self):
-        return str(random.randrange(0,999)).zfill(3)
+        max_num = 999
+        return str(secrets.randbelow(max_num + 1)).zfill(3)
 
     def __get_rand_char(self):
-        letters ="abcdefghijklmnopqrstuvwxyz"
-        return random.choice(letters.upper())
+        letters = string.ascii_uppercase
+        return secrets.choice(letters)
 
     def __create_name(self):
-        return "{}{}{}".format(self.__get_rand_char(), self.__get_rand_char(), self.__get_rand_int())
+        return f'{self.__get_rand_char()}{self.__get_rand_char()}{self.__get_rand_int()}'
 
     def get_name(self):
      
@@ -30,3 +32,6 @@ class Robot:
             temp_name = self.__create_name()
 
         return temp_name
+
+
+        string.asc
