@@ -3,7 +3,7 @@ using Xunit;
 
 public class RobotNameTest
 {
-    private readonly Robot robot = new Robot();
+    private readonly Robot robot = new Robot("Jim");
 
     [Fact]
     public void Robot_has_a_name()
