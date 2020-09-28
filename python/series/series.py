@@ -1,4 +1,5 @@
 def slices(series, length):
+
     if length <= 0:
         raise ValueError('Length cannot be 0 or less.')
     elif not series:
