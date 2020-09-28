@@ -1,13 +1,8 @@
 import math
 
 def is_armstrong_number(number):
-    stringify = str(number)
-    power = len(stringify)
-    powers = []
-
-
-    for base in stringify:
-        value = int(math.pow(int(base), power))
-        powers.append(value)
-        
+    num_list = list(map(int, str(number)))
+    power = len(num_list)
+    powers = [ int(math.pow(base, power)) for base in num_list ]
+ 
     return number == sum(powers)
