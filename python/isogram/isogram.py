@@ -1,6 +1,5 @@
 import re
 
-
 def is_isogram(string):
     normalize = re.sub(r'\W', '', string.lower())
 
