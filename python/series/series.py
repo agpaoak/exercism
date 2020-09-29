@@ -6,12 +6,12 @@ def slices(series, length):
         raise ValueError('Series cannot be empty')
     elif length > len(series):
         raise ValueError('Length cannot be greater than the length of Series')
-    elif len(series) >= length:        
+    elif len(series) >= length:
         sliced = []
         for n in range(len(series)):
             value = series[n:n+length]
             if len(value) == length:
                 sliced.append(value)
             else:
-                break   
+                break
         return sliced
