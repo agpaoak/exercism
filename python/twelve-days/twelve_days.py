@@ -1,2 +1,15 @@
 def recite(start_verse, end_verse):
-    pass
+    days = [
+        'first',
+        'second',
+        'third',
+        'fourth',
+        'fifth',
+        'sixth',
+        'sevent',
+        'eigth',
+        'ninth',
+        'tenth',
+        'eleventh',
+        'twelfth'
+    ]
