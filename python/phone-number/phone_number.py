@@ -37,11 +37,12 @@ class PhoneNumber:
     def __get_country_code(self, number):
         cc = None
         if len(self.number) == 11:
-            self.country_code = self.number[0]
+            cc = self.number[0]
+            # Side affect to assign self.number to a possible exchange code
             self.number = self.number[1:]
-            if self.country_code != '1':
+            if cc != '1':
                 raise ValueError('Invalid Country Code')
-        return None
+        return cc
 
     def __get_area_code(self, number):
         area_code = number[0:3]
